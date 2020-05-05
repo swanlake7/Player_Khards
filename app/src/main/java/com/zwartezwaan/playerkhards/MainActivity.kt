@@ -19,19 +19,19 @@ class MainActivity : AppCompatActivity() {
         objList.add(
             Objex("Edge Sharing 5-Fold Cluster",
                 "A cluster of 5 regular tetrahedra, sharing one edge, leaving small gaps between adjacent faces.",
-                    R.drawable.edge_sharing_5_fold_cluster) )
+                    R.drawable.edge_sharing_5_fold_cluster, true) )
         objList.add(
             Objex("Edge Sharing 4-Fold Cluster",
                 "A cluster of 4 regular tetrahedra, sharing one edge, leaving small gaps between adjacent faces.",
-                R.drawable.edge_sharing_4_fold_cluster) )
+                R.drawable.edge_sharing_4_fold_cluster, true) )
         objList.add(
             Objex("Edge Sharing 3-Fold Cluster",
                 "This is a cluster of 3 regular tetrahedra, sharing one edge, leaving small gaps between adjacent faces.",
-                R.drawable.edge_sharing_3_fold_cluster) )
+                R.drawable.edge_sharing_3_fold_cluster, true) )
         objList.add(
             Objex("Vertex Sharing 4-Fold Cluster",
                 "A cluster of 8 regular tetrahedra, sharing one vertex, leaving small gaps between adjacent faces.",
-                R.drawable.vertex_sharing_4_fold_cluster) )
+                R.drawable.vertex_sharing_4_fold_cluster, false) )
 
         adaptyy = ObjAdapt(this,objList)
         objexList.adapter = adaptyy
