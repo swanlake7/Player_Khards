@@ -14,7 +14,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/img1"
+            android:id="@+id/imgE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/edge_sharing_3_fold_cluster" />
@@ -25,7 +25,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/name1"
+                android:id="@+id/nameE"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Edge Sharing 3-Fold Cluster"
@@ -33,7 +33,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/desc1"
+                android:id="@+id/descE"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="This is a cluster of 3 regular tetrahedra, sharing one edge, leaving small gaps between adjacent faces."

@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.player_khards.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                 R.drawable.vertex_sharing_4_fold_cluster, false) )
 
         adaptyy = ObjAdapt(this,objList)
-        objexList.adapter = adaptyy
+        objListhehe.adapter = adaptyy
     }
 
     class ObjAdapt: BaseAdapter{
@@ -50,21 +52,21 @@ class MainActivity : AppCompatActivity() {
             if (objyy.edged == true){
                 var inflatory = contexty!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
                 var mijnUitzicht = inflatory.inflate(R.layout.edged, null)
-                mijnUitzicht.name.text = objyy.name
-                mijnUitzicht.desc.text = objyy.desc
-                mijnUitzicht.img.setImageResource(objyy.img)
+                mijnUitzicht.nameE.text = objyy.name
+                mijnUitzicht.descE.text = objyy.desc
+//                mijnUitzicht.imgE.setImageResource(objyy.img)
                 return mijnUitzicht
             }
             else{
             var inflatory = contexty!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var mijnUitzicht = inflatory.inflate(R.layout.player_khards, null)
-            mijnUitzicht.name.text = objyy.name
-            mijnUitzicht.desc.text = objyy.desc
-            mijnUitzicht.img.setImageResource(objyy.img)
+            mijnUitzicht.nameE.text = objyy.name
+            mijnUitzicht.descE.text = objyy.desc
+//            mijnUitzicht.imgE.setImageResource(objyy.img)
             return mijnUitzicht   }
         }
 
-        override fun getItem(post0: Int): Any { objexListyy[0]}
+        override fun getItem(post0: Int): Any { return objexListyy[0]}
 
         override fun getItemId(post0: Int): Long {return post0.toLong()  }
 
