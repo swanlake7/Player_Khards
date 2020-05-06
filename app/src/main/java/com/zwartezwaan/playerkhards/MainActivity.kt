@@ -47,12 +47,21 @@ class MainActivity : AppCompatActivity() {
 
         override fun getView(pos0: Int, pos1: View?, pos2: ViewGroup?): View {
             var objyy = objexListyy[pos0]
+            if (objyy.edged == true){
+                var inflatory = contexty!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+                var mijnUitzicht = inflatory.inflate(R.layout.edged, null)
+                mijnUitzicht.name.text = objyy.name
+                mijnUitzicht.desc.text = objyy.desc
+                mijnUitzicht.img.setImageResource(objyy.img)
+                return mijnUitzicht
+            }
+            else{
             var inflatory = contexty!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var mijnUitzicht = inflatory.inflate(R.layout.player_khards, null)
             mijnUitzicht.name.text = objyy.name
             mijnUitzicht.desc.text = objyy.desc
             mijnUitzicht.img.setImageResource(objyy.img)
-            return mijnUitzicht
+            return mijnUitzicht   }
         }
 
         override fun getItem(post0: Int): Any { objexListyy[0]}
