@@ -1,6 +1,7 @@
 package com.zwartezwaan.playerkhards
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -36,16 +37,23 @@ class MainActivity : AppCompatActivity() {
                 R.drawable.vertex_sharing_4_fold_cluster, false) )
 
         adaptyy = ObjAdapt(this,objList)
-        objListhehe.adapter = adaptyy
+        objListhehe.adapter = adaptyy }
+
+    fun addyy(indexsh:Int){
+        objList.add(indexsh, objList[indexsh])
+        adaptyy!!.notifyDataSetChanged()
     }
 
-    class ObjAdapt: BaseAdapter{
+    fun eraseyy(indexyy:Int){
+        objList.removeAt(indexyy)
+        adaptyy!!.notifyDataSetChanged() }
+
+   inner class ObjAdapt: BaseAdapter{
         var objexListyy = ArrayList<Objex>()
         var contexty:Context?= null
         constructor(contextty: Context, objexList: ArrayList<Objex> ):super (){
             this.objexListyy = objexList
-            this.contexty=contextty
-        }
+            this.contexty=contextty }
 
         override fun getView(pos0: Int, pos1: View?, pos2: ViewGroup?): View {
             var objyy = objexListyy[pos0]
@@ -57,10 +65,11 @@ class MainActivity : AppCompatActivity() {
                 mijnUitzicht.imgE.setImageResource(objyy.img!!)
                 mijnUitzicht.imgE.setOnClickListener{
                     var intenty = Intent(contexty, KhardInfo::class.java)
-                    intenty.putExtra("nameHehe", objyy.name)
-                    intenty.putExtra("descHehe", objyy.desc)
-                    intenty.putExtra("imgHehe", objyy.img)
+                    intenty.putExtra("nameHehe", objyy.name!!)
+                    intenty.putExtra("descHehe", objyy.desc!!)
+                    intenty.putExtra("imgHehe", objyy.img!!)
                     contexty!!.startActivity(intenty)
+                    addyy(pos0)
                 }
                 return mijnUitzicht
             }
@@ -72,10 +81,11 @@ class MainActivity : AppCompatActivity() {
             mijnUitzicht.imgE.setImageResource(objyy.img!!)
                 mijnUitzicht.imgE.setOnClickListener{
                     var intenty = Intent(contexty, KhardInfo::class.java)
-                    intenty.putExtra("nameHehe", objyy.name)
-                    intenty.putExtra("descHehe", objyy.desc)
-                    intenty.putExtra("imgHehe", objyy.img)
+                    intenty.putExtra("nameHehe", objyy.name!!)
+                    intenty.putExtra("descHehe", objyy.desc!!)
+                    intenty.putExtra("imgHehe", objyy.img!!)
                     contexty!!.startActivity(intenty)
+                    addyy(pos0)
                 }
             return mijnUitzicht   }
         }
