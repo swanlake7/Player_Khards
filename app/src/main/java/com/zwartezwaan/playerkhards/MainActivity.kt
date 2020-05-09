@@ -52,17 +52,31 @@ class MainActivity : AppCompatActivity() {
             if (objyy.edged == true){
                 var inflatory = contexty!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
                 var mijnUitzicht = inflatory.inflate(R.layout.edged, null)
-                mijnUitzicht.nameE.text = objyy.name
-                mijnUitzicht.descE.text = objyy.desc
-//                mijnUitzicht.imgE.setImageResource(objyy.img)
+                mijnUitzicht.nameE.text = objyy.name!!
+                mijnUitzicht.descE.text = objyy.desc!!
+                mijnUitzicht.imgE.setImageResource(objyy.img!!)
+                mijnUitzicht.imgE.setOnClickListener{
+                    var intenty = Intent(contexty, KhardInfo::class.java)
+                    intenty.putExtra("nameHehe", objyy.name)
+                    intenty.putExtra("descHehe", objyy.desc)
+                    intenty.putExtra("imgHehe", objyy.img)
+                    contexty!!.startActivity(intenty)
+                }
                 return mijnUitzicht
             }
             else{
             var inflatory = contexty!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var mijnUitzicht = inflatory.inflate(R.layout.player_khards, null)
-            mijnUitzicht.nameE.text = objyy.name
-            mijnUitzicht.descE.text = objyy.desc
-//            mijnUitzicht.imgE.setImageResource(objyy.img)
+            mijnUitzicht.nameE.text = objyy.name!!
+            mijnUitzicht.descE.text = objyy.desc!!
+            mijnUitzicht.imgE.setImageResource(objyy.img!!)
+                mijnUitzicht.imgE.setOnClickListener{
+                    var intenty = Intent(contexty, KhardInfo::class.java)
+                    intenty.putExtra("nameHehe", objyy.name)
+                    intenty.putExtra("descHehe", objyy.desc)
+                    intenty.putExtra("imgHehe", objyy.img)
+                    contexty!!.startActivity(intenty)
+                }
             return mijnUitzicht   }
         }
 
